@@ -1,0 +1,150 @@
+%Preamble
+\pdfminorversion=4
+\documentclass[12pt]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8x]{inputenc}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{parskip}
+%\usepackage{showframe}
+
+\geometry{
+    papersize = {216mm, 279mm},
+    width = 16.6cm,
+    height = 25cm,
+    headsep = 5mm,
+    head = 2.8cm,
+    marginpar = 5mm,
+    includeall,
+}
+
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[LO,LE]{
+    \begin{minipage}{3cm}
+        \includegraphics[width=0.7\textwidth]{Escudo.jpg}
+    \end{minipage}
+}
+\fancyhead[RO,RE]{
+    \textsf{
+        Serie de Fourier aplicado a una función Diente de Sierra\\
+        Teoría de telecomunicaciones I, Grupo A12\\
+        \date{\today}.   
+    }
+}
+\fancyfoot[C]{\thepage}
+
+\pagestyle{fancy}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=blue,        % color of internal links
+	citecolor=blue,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+\spanishdecimal{.}
+
+%++++++++++++++++++++++++++++++++++++++++
+%Content
+
+\title{\textbf{Series de Fourier}}
+\author{
+    Jefry Nicolas Chicaiza - \url{jefryn@unicauca.edu.co}\\
+    Jose Nicolas Zambrano - \url{jnzambranob@unicauca.edu.co}
+}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\section*{Introducción}
+    
+
+    Recuerden que cantidad no necesariamente implica calidad, por lo que la mejor apuesta 
+    es ser concisos y no crear un Frankenstein com información de otras fuentes, dicho de 
+    otra forma "no pasen a sucio lo que ya está en limpio".\\
+    \\
+    Una vez aclarado el punto anterior, en mi opinión la introducción se debe utilizar 
+    principalmente para dos cosas:
+    \begin{enumerate}
+        \item Contextualizar. En esta parte deben indicar por qué y el para qué se su informe 
+        (no vale decir que es para pasar el curso), pueden introducir definiciones 
+        importantes o conceptos teóricos necesarios para entender el resto del 
+        documento. No obstante, no se trata de elaborar un marco teórico.
+
+        \item Enunciar. Dado que ya se ha explicado la finalidad de su trabajo, se debe mostrar 
+        de forma concisa la forma en la que éste se ha desarrollado, como un abrebocas 
+        para que el lector sepa qué es lo que encontrará más adelante. Esta segunda 
+        parte es mejor escribirla una vez haya terminado el resto del documento.
+    \end{enumerate}
+    Deben tener presente que en muchos casos de la introducción depende que una persona 
+    continúe leyendo (yo soy la estoica excepción), por lo que traten de que quede muy clara la 
+    primera parte de la introducción, para lo cual deben seguir un hilo conductor y una 
+    secuencia lógica. En mi caso es muy útil definir primero qué quiero decir en cada párrafo 
+    antes de comenzar a escribirlo.\\
+    \\
+    Aunque cada persona tiene su propio estilo de escritura, para mi es una buena táctica 
+    plantear preguntas dentro del texto que nos ayuden a conducir al lector por el tema, una 
+    pregunta bien planteada puede ser muy valiosa por sí sola.\\
+    \\
+    En cuanto a la redacción deben tener una cosa muy clara, NO DEBEN ESCRIBIR EN 
+    PRIMERA PERSONA y deben intentar ser claros con respecto a sus afirmaciones.
+    
+\section*{Metodología}
+    En esta sección explican de forma clara cómo fue el proceso para obtener los resultados:
+    \begin{enumerate}
+        \item Aspectos fundamentales de su simulación. No me refiero a pantallazos del código 
+        (de hecho, eviten hacer eso en cualquier documento a menos de que les indiquen 
+        lo contrario, en cuyo caso es más aconsejable mandarlo a un apéndice), sino a 
+        consideraciones o suposiciones que hicieron para el planteamiento de la simulación, 
+        con el fin de que ésta tenga congruencia con la teoría y por lo tanto validez. 
+
+        \item Plan de pruebas. En caso de que su objetivo sea comprobar una hipótesis, entonces 
+        deben plantear un plan de pruebas, es decir, mostrar la forma en la que proponen 
+        variar parámetros de la simulación para crear diferentes escenarios que les permitan 
+        hacer la validación. Busquen crear escenarios en los que varíen una cosa a la vez, 
+        de tal forma que sea fácil interpretar los resultados, ya que saben qué es lo que está 
+        influenciando los cambios. Si crean escenarios en los que todo cambia al mismo 
+        tiempo, luego no será posible analizar el por qué de dichos resultados. 
+
+        \item Para proyectos más grandes, como sus trabajos de grado, es necesaria una guía, 
+        que permita plantear fases y conseguir una sumatoria resultados pequeños que 
+        conduzcan al objetivo final, por eso en esos casos en esta sección se describe la 
+        metodología utilizada; sin embargo, para nuestro caso no será así. 
+    \end{enumerate}
+
+\section*{Análisis de Resultados}
+    Recuerden que presentar resultados no es lo mismo que adjuntar mil y una imágenes de 
+    forma consecutiva. La sección de resultados es muy importante porque en ésta es en 
+    donde ustedes realizan el análisis y ojo que ANÁLISIS ES DIFERENTE DE DESCRIPCIÓN.\\
+    ... En la Figura 1 se observa que la línea roja por encima de la azul en todo 
+    momento... (Muy amable por su descripción, pero eso también lo estoy viendo yo).\\
+    ...Los resultados mostrados en la Figura 1 implican que para este escenario el método A 
+    es superior al método B, debido a que con el método A se favorecen...\\
+    La forma en la que ustedes interpretan lo que obtienen en la simulación me indica a mí su 
+    dominio del tema. Si hay un resultado que no tiene sentido no traten de forzar sobre él 
+    una explicación estrambótica, revisen si existen problemas en la simulación o el 
+    planteamiento, pero para esto ustedes deben tener el tema claro, de lo contrario no 
+    tendrán el criterio necesario para saber si el resultado tiene sentido o no.
+    
+\section*{Conclusiones}
+    Aunque puede parecer que gastaron sus mejores ideas en la sección de análisis, la 
+    diferencia de las conclusiones es que en este punto ustedes tienen una visión completa 
+    del trabajo, ya han abordado todas las fases y por lo tanto están en la capacidad de 
+    realizar un compendio de los aprendizajes obtenidos.\\
+    Esos aprendizajes deben estar estrechamente relacionados con lo que buscan en el 
+    trabajo, con lo que plantearon en el pro qué y el para qué en la introducción. Si esto fuera 
+    su trabajo de grado, las conclusiones deben estar relacionadas con los objetivos de ese 
+    trabajo.\\
+    Lo anterior implica que la siguiente conclusión no es una conclusión válida:\\
+    ... MATLAB es un entorno de simulación muy adecuado, ya que permite implementar 
+    sistemas de telecomunicaciones...
+\end{document}
