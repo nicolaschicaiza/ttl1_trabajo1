@@ -13,6 +13,8 @@
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \usepackage{parskip}
+\usepackage{amssymb, amsmath} % Paquetes matemáticos de la American Mathematical Society
+\usepackage{float}
 %\usepackage{showframe}
 
 \geometry{
@@ -45,8 +47,8 @@
 
 \hypersetup{
 	colorlinks=true,       % false: boxed links; true: colored links
-	linkcolor=blue,        % color of internal links
-	citecolor=blue,        % color of links to bibliography
+	linkcolor=black,        % color of internal links
+	citecolor=black,        % color of links to bibliography
 	filecolor=magenta,     % color of file links
 	urlcolor=blue         
 }
@@ -69,7 +71,7 @@
     En el siguiente documento se desarrollará el informe del Trabajo 1 de la asignatura 
     Teoría de las telecomunicaciones 1. El trabajo presenta inicialmente el desarrollo 
     analítico mediante serie de Fourier de la señal planteada, la cual es del tipo 
-    "diente de sierra" trasladado en el tiempo.\\
+    "diente de sierra"  trasladado en el tiempo.\\
     \\
     Iniciar con el desarrollo analítico es necesario debido a que para alcanzar los 
     resultados esperados en la simulación, se requiere conocer de antemano los coeficientes 
@@ -80,8 +82,26 @@
     y se buscará llegar a conclusiones y síntesis a partir de los datos obtenidos en la 
     simulación de los diferentes escenarios.\\
     \\
+    Los teoremas e hipótesis nos dicen que la serie de Fourier de cualquier señal periódica de potencia 
+    finita la podemos obtener por medio de una suma infinita de funciones sinusoidales. La serie de 
+    Fourier de una señal pueden expresarse de dos maneras, una representada por serie trigonométrica y 
+    otra con representación de serie compleja.\\ 
+    \\
+    En este documento unicamente se realiza los cálculos de la serie de Fourier para la señal propuesta 
+    con la representación trigonométrica, que observamos a continuación:
 
+    \begin{equation}
+        x(t)=a_{0}+\sum_{n=1}^{\infty} a_{n}cos(2\pi nf_{0}t)+b_{n}sin(2\pi f_{0}t)
+        \label{equation1}
+    \end{equation}
+    
+    Donde los términos $a_{0}$, $a_{n}$ y $b_{n}$ son los coeficientes de la serie de Fourier, de los cuales
+    es necesario realizar cálculos para encontrar sus valores y lograr representar la serie de la señal dada.
 
+    La razón por la que unicamente se realizan los cálculos de la serie trigonométrica de 
+    Fourier es por la necesidad de obtener resultados para el espectro de magnitud, sin 
+    embargo, no quiere decir que con la serie compleja no sea posible, si no que con la serie 
+    trigonométrica se puede llagar directamente con los coeficientes que se calculan de ella.
 
     Recuerden que cantidad no necesariamente implica calidad, por lo que la mejor apuesta 
     es ser concisos y no crear un Frankenstein com información de otras fuentes, dicho de 
@@ -115,14 +135,113 @@
     
 \section*{Metodología}
     La metodología empleada para el desarrollo de la serie de Fourier a la señal planteada se 
-    logro mediante la aplicación de los teoremas e hipótesis, los cuales nos dicen que la serie 
-    de Fourier de cualquier señal periódica de potencia finita la podemos obtener por medio de una
-    suma infinita de funciones sinusoidales. La serie de Fourier de una señal pueden expresarse de 
-    dos maneras, una representada por serie trigonométrica y otra serie compleja.
+    logro mediante la aplicación de los teoremas e hipótesis, en el apartado anterior se menciono 
+    la necesidad de calcular los valores de ciertos términos para logra obtener la representación 
+    matemática de la serie de Fourier de la señal planteada.\\ 
+    \\
+    En primer lugar es importante conocer el comportamiento que nos describe los términos, el primer 
+    termino de la serie, $a_{0}$, no está asociado con una frecuencia y es una constante, además es 
+    conocido como el nivel DC de la señal, representa el cambio de la señal sobre un nivel arbitrario 
+    de referencia. Este termino lo podemos calcular de la siguiente manera:
 
-    En este documento primero se realiza los cálculos de la serie de Fourier para la señal propuesta 
-    con la representación trigonométrica, que observamos a continuación:
+    \begin{equation}
+        a_{0}=\frac{1}{T} \int_{T}^{} x(t)dt
+        \label{equation2}
+    \end{equation}
     
+    De la expresión anterior podemos deducir que el termino DC representa el área bajo la curva de la 
+    señal \cite{diapositivas}, que hasta el momento no conocemos la función que la representa, por tanto es necesario obtener 
+    la función a partir de su gráfica. En la figura \ref{figure1} observamos la señal asignada.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/figure1.png}
+        \caption{Gráfica de la señal tipo "diente de sierra".}
+        \label{figure1}
+    \end{figure}
+
+    En \cite{Sawtooth} se menciona que durante el intervalo en el que se presenta la señal, la función que 
+    responde a una onda diente de sierra se da de la siguiente manera:
+    
+    \begin{equation*}
+        x(t)=\frac{A}{T} t
+    \end{equation*}
+
+    Por lo que la función a la que responde la señal que se plantea debe ser del mismo modo, la expresión 
+    de la señal es la siguiente:
+
+    \begin{equation}
+        x(t)=\frac{1}{4} t+\frac{1}{8}
+        \label{equation3}
+    \end{equation}
+
+    Ahora que conocemos la expresión de la señal se procederá a obtener el valor del termino $a_{0}$, con las 
+    ecuaciones \ref{equation2} y \ref{equation3}:
+
+    \begin{equation*}
+        a_{0}=\frac{1}{4} \int_{-\frac{1}{2}}^{\frac{7}{2}} \frac{1}{4} t+\frac{1}{8}
+    \end{equation*}
+    \begin{equation}
+        a_{0}=\frac{1}{2}
+        \label{equation4}
+    \end{equation}    
+
+    Para el valor de los términos restantes es importante mencionar que con frecuencia las simetrías simplifican 
+    a los problemas matemáticos. En el caso de la series de Fourier, se utiliza la simetría en la paridad para 
+    simplificar el problema. En el caso de funciones pares el desarrollo de la serie de Fourier implica solamente 
+    la necesidad de calcular $a_{0}$ y $a_{n}$, y sólo $b_{n}$ para impares \cite{parimpar}.\\
+    \\
+    La señal que concierne a este texto podemos deducir de su gráfica que no se comporta igual que su imagen respecto 
+    al eje $y$, ni tampoco hay presencia de simetría al rotar la gráfica en 180 grados. Por tanto, se trata de una 
+    función sin paridad, lo que implica la necesidad de calcular todos los términos de la serie trigonométrica de Fourier .\\
+    \\
+    Las siguientes expresiones corresponden al calculo de los coeficientes $a_{n}$ y $b_{n}$:
+
+    \begin{equation}
+        a_{n}=\frac{2}{T} \int_{T} x(t)cos(2\pi nf_{0}t)dt
+        \label{equation5}
+    \end{equation}
+    \begin{equation}
+        b_{n}=\frac{2}{T} \int_{T} x(t)sin(2\pi nf_{0}t)dt
+        \label{equation6}
+    \end{equation}
+
+    los resultados obtenidos al realizar los cálculos para los coeficientes son los siguientes (los cálculos que 
+    se presentan en este documento están simplificados, por tal motivo se anexa el paso a paso en el apartado de 
+    Anexos):\\
+
+    \begin{itemize}
+        \item Calculo $a_{n}$
+            \begin{equation*}
+                a_{n}=\frac{1}{8}\int_{-\frac{1}{2}}^{\frac{7}{2}} tcos(2\pi nf_0t)dt + 
+                \frac{1}{16} \int_{-\frac{1}{2}}^{\frac{7}{2}} cos(2\pi nf_0t)dt
+            \end{equation*}
+            \begin{equation}
+                a_{n}=\frac{1}{\pi n} sin\left(\frac{7\pi n}{4}\right)+\frac{1}{2\pi^2 n^2}\left(cos\left(\frac{7\pi n}{4}\right)-cos\left(\frac{\pi n}{4}\right)\right)
+                \label{equation7}
+            \end{equation}
+        \item Calculo $b_{n}$
+            \begin{equation*}
+                b_{n}=\frac{1}{8}\int_{-\frac{1}{2}}^{\frac{7}{2}} tsin(2\pi nf_0t)dt + 
+                \frac{1}{16} \int_{-\frac{1}{2}}^{\frac{7}{2}} sin(2\pi nf_0t)dt
+            \end{equation*}
+            \begin{equation}
+                b_{n}=-\frac{1}{\pi n} cos\left(\frac{7\pi n}{4}\right)+\frac{1}{2\pi^2 n^2}\left(sin\left(\frac{7\pi n}{4}\right)+sin\left(\frac{\pi n}{4}\right)\right)
+                \label{equation8}
+            \end{equation}
+    \end{itemize}
+    
+    Lo siguiente sera completar la serie de Fourier para obtener la representación matemática de las funciones sinusoidales 
+    que construyen la señal planteada, reemplazamos las ecuaciones \ref{equation7} y \ref{equation8} en la ecuación 
+    \ref{equation1}:
+
+    \begin{multline}
+        x(t)=\frac{1}{2}+\sum_{n=1}^{\infty} \left[\frac{1}{\pi n} sin\left(\frac{7\pi n}{4}\right)+\frac{1}{2\pi^2 n^2}\left(cos\left(\frac{7\pi n}{4}\right)-cos\left(\frac{\pi n}{4}\right)\right)
+        \right]cos\left(\frac{\pi nt}{2}\right)...\\ +\left[-\frac{1}{\pi n} cos\left(\frac{7\pi n}{4}\right)+\frac{1}{2\pi^2 n^2}\left(sin\left(\frac{7\pi n}{4}\right)+sin\left(\frac{\pi n}{4}\right)\right)
+        \right]sin\left(\frac{\pi nt}{2}\right)
+        \label{equation9}
+    \end{multline}
+
 
     En esta sección explican de forma clara cómo fue el proceso para obtener los resultados:
     \begin{enumerate}
@@ -172,8 +291,13 @@
     Lo anterior implica que la siguiente conclusión no es una conclusión válida:\\
     ... MATLAB es un entorno de simulación muy adecuado, ya que permite implementar 
     sistemas de telecomunicaciones...
-%\begin{thebibliography}
-   %% \bibitem{diapositiva}
-    
-%\end{thebibliography}
+
+\begin{thebibliography}{99}
+    \bibitem{diapositivas}
+        M. Silva, “Capítulo II: Análisis de Fourier,” Notas Cl., pp. 3–70, 2021.
+    \bibitem{Sawtooth}
+        A. Engineering, M. Subject, L. Transform, and O. F. Periodic, “Snpit \& rc,” p. 11, [Online]. Available: https://www.slideshare.net/surtikaushal/laplace-periodic-function-with-graph.
+    \bibitem{parimpar}
+        E. Rojero, “Matemáticas Avanzadas,” Univ. Nac. Autónoma México, vol. 0.1, p. 52, 2009, [Online]. Available: https://openlibra.com/es/book/download/matematicas-avanzadas.
+\end{thebibliography}
 \end{document}
