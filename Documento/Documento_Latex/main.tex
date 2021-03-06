@@ -91,7 +91,7 @@
     con la representación trigonométrica, que observamos a continuación:
 
     \begin{equation}
-        x(t)=a_{0}+\sum_{n=1}^{inf} a_{n}cos(2\pi nf_{0}t)+b_{n}sin(2\pi f_{0}t)
+        x(t)=a_{0}+\sum_{n=1}^{\infty} a_{n}cos(2\pi nf_{0}t)+b_{n}sin(2\pi f_{0}t)
         \label{equation1}
     \end{equation}
     
@@ -193,7 +193,7 @@
     \\
     La señal que concierne a este texto podemos deducir de su gráfica que no se comporta igual que su imagen respecto 
     al eje $y$, ni tampoco hay presencia de simetría al rotar la gráfica en 180 grados. Por tanto, se trata de una 
-    función sin paridad, lo que implica la necesidad de calcular ambos términos de la serie trigonométrica de Fourier .\\
+    función sin paridad, lo que implica la necesidad de calcular todos los términos de la serie trigonométrica de Fourier .\\
     \\
     Las siguientes expresiones corresponden al calculo de los coeficientes $a_{n}$ y $b_{n}$:
 
@@ -207,7 +207,7 @@
     \end{equation}
 
     los resultados obtenidos al realizar los cálculos para los coeficientes son los siguientes (los cálculos que 
-    se presentan en este documento están simplificados, por tal motivo se anexa el paso a paso en apartado de 
+    se presentan en este documento están simplificados, por tal motivo se anexa el paso a paso en el apartado de 
     Anexos):\\
 
     \begin{itemize}
@@ -236,11 +236,12 @@
     \ref{equation1}:
 
     \begin{multline}
-        x(t)=\frac{1}{2}+\sum_{n=1}^{inf} \frac{1}{\pi n} sin\left(\frac{7\pi n}{4}\right)+\frac{1}{2\pi^2 n^2}\left(cos\left(\frac{7\pi n}{4}\right)-cos\left(\frac{\pi n}{4}\right)\right)
-        cos\left(\frac{\pi nt}{2}\right)...\\ -\frac{1}{\pi n} cos\left(\frac{7\pi n}{4}\right)+\frac{1}{2\pi^2 n^2}\left(sin\left(\frac{7\pi n}{4}\right)+sin\left(\frac{\pi n}{4}\right)\right)
-        sin\left(\frac{\pi nt}{2}\right)
-        \label{equation1}
+        x(t)=\frac{1}{2}+\sum_{n=1}^{\infty} \left[\frac{1}{\pi n} sin\left(\frac{7\pi n}{4}\right)+\frac{1}{2\pi^2 n^2}\left(cos\left(\frac{7\pi n}{4}\right)-cos\left(\frac{\pi n}{4}\right)\right)
+        \right]cos\left(\frac{\pi nt}{2}\right)...\\ +\left[-\frac{1}{\pi n} cos\left(\frac{7\pi n}{4}\right)+\frac{1}{2\pi^2 n^2}\left(sin\left(\frac{7\pi n}{4}\right)+sin\left(\frac{\pi n}{4}\right)\right)
+        \right]sin\left(\frac{\pi nt}{2}\right)
+        \label{equation9}
     \end{multline}
+
 
     En esta sección explican de forma clara cómo fue el proceso para obtener los resultados:
     \begin{enumerate}
