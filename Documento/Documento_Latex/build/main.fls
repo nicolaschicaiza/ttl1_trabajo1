@@ -782,10 +782,6 @@ INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmss12.tfm
 INPUT C:\Users\Nicolas Chicaiza\AppData\Local\MiKTeX\pdftex\config\pdftex.map
-INPUT .\Escudo.jpg
-INPUT .\Escudo.jpg
-INPUT Escudo.jpg
-INPUT .\Escudo.jpg
 INPUT .\img\figure1.png
 INPUT .\img\figure1.png
 INPUT img\figure1.png
@@ -805,14 +801,14 @@ INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
 INPUT .\Escudo.jpg
-INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
-INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
-INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
-INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
 INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
 INPUT .\Escudo.jpg
+INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
+INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
+INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
+INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
 INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
