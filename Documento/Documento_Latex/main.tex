@@ -15,6 +15,12 @@
 \usepackage{parskip}
 \usepackage{amssymb, amsmath} % Paquetes matemáticos de la American Mathematical Society
 \usepackage{float}
+\usepackage{multirow}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usetikzlibrary{calc}
+\usetikzlibrary{fit}
 %\usepackage{showframe}
 
 \geometry{
@@ -216,7 +222,90 @@
     es la representación reconstruyendo la señal utilizando diferentes cantidades de componentes, para esto 
     se realizaran pruebas con un Script desarrollado en MATLAB.\\
     \\
+    Después de haber realizado el planteamiento de los fundamentos matemáticos requeridos para solucionar 
+    el problema, se procedió a realizar la planificación del diseño practico requerido para solucionar 
+    el mismo.\\
+    \\
+    Se pueden identificar 6 objetivos clave a desarrollar con la simulación en MATLAB:\\
+
+    \begin{enumerate}
+        \item Reconstrucción de la señal dada a partir de la serie de Fourier.
+        \item Justificación del número de coeficientes necesarios para ua reconstrucción adecuada de la 
+            señal original.
+        \item Análisis del espectro de magnitud cuando el periodo T de la señal reconstruida cambia.
+        \item Análisis del espectro de magnitud cuando se agrega espacio de tiempo donde $x(t)=0$ entre 
+            los pulsos periódicos "diente de sierra".
+        \item Análisis de la continuidad del número de coeficientes necesarios cuando el periodo de la 
+            señal cambia.
+        \item Análisis de la continuidad del número de coeficientes necesarios cuando se agregan ceros 
+            como en el objetivo 4.
+    \end{enumerate}
+
+    Después de realizar el análisis de los requerimientos anteriores, se plantea el siguiente \underline{esquema}
+    \underline{general} para el desarrollo de la simulación:
+    \\
+
+    \xymatrix{
+        *++[F-,]\text{1. Declaración de variables y espacios \\ vectoriales a utilizar\\
+            \bullet Se requiere debido a que se tienen variables \\ generales como el Periodo "T" que van a cambiar de \\
+                acuerdo a los objetivos clave a desarrollar y afectan a \\todo el desarrollo de la simulación.\\
+            \bullet Aquí se va a generar la señal original para realizar las \\ comparaciones posteriores.
+        } \ar[r] &
+        *++[F-,]\text{2. Calculo de los coeficientes de Fourier\\
+            \bullet Como se plantean escenarios donde los valores de \\Periodo y forma de la señal periodica cambián, se \\
+            hace necesario realizar cálculos simbólicos de los \\coeficientes Ao, An y Bn para generalizar la simulación \\ 
+            a todos los escenarios posibles de prueba.} \ar[r] &
+        
+    }
+
     
+
+    Para la realización del script de simulación se utilizó el paradigma de programación estructurada, ya 
+    que el mismo permite agilidad en el desarrollo del código, así como también facilita el desarrollo de los 
+    planteamientos matemáticos necesarios para lograr los objetivos de la simulación.\\
+    \\
+    Adicionalmente la programación estructurada, brinda al observador del código una perspectiva secuencial en 
+    el desarrollo del algoritmo de simulación, y, por lo tanto, un orden lógico y trazable de los resultados 
+    esperados en la ejecución de este.\\
+    
+    \subsection*{Plan de pruebas}
+        Retomando los 6 objetivos clave a desarrollar con la simulación; se plantea el siguiente plan de pruebas 
+        para cadaa uno de ellos:
+
+        \begin{table}[H]
+            \begin{center}
+                \begin{tabular}{| m{5cm} | m{12cm} |}
+                    \hline
+                    \textbf{Objetivo Clave} & \textbf{Pruebas y Criterio de Satisfacción} \\ \hline
+                    \multirow{3}{4.5cm}{Reconstrucción de la señal} 
+                        & Se dibuja mediante la simulación la señal original y la señal reconstruida. \\ \cline{2-2} 
+                        & Se observan similitudes y diferencias. \\ \cline{2-2}
+                        & Se concluye si las señales son gráficamente similares o diferentes. \\ \hline
+                    \multirow{4}{4.5cm}{Justificación del número de Coeficientes}
+                        & Se calcula la igualdad de Parseval. \\ \cline{2-2} 
+                        & Se observa el fenómeno de Gibbs en la vecindad delas desigualdades de la señal. \\ \cline{2-2}
+                        & Se analizan los valores obtenidos con 5 diferentes números de armónicos. \\ \cline{2-2}
+                        & Se concluye el valor de armónicos necesarios para tener una reconstrucción 
+                        aceptable de la señal. \\ \hline
+                    \multirow{3}{4.5cm}{Análisis del espectro de magnitud cuando el periodo $T$ cambia}
+                        & Se dibuja y se analiza el espectro de magnitud con periodo $T=4$ y $N=100$. \\ \cline{2-2}
+                        & Se dibuja y se analiza el espectro de magnitud con el mismo $N$ y 3 valores diferentes 
+                        de periodo $T$. \\ \cline{2-2}
+                        & Se analiza las diferencias entre las gráficas. \\ \hline
+                    \multirow{3}{4.5cm}{Análisis del espectro de magnitud cuando se agregan ceros}
+                        & Se dibuja y se analiza el espectro de magnitud con periodo $T_r=4$, $N=100$ y periodo de ceros $T_0=0$. \\ \cline{2-2}
+                        & Se dibuja y se analiza el espectro de magnitud con el mismo $N$, $T_r$ y 3 valores diferentes de periodo de ceros $T_0$. \\ \cline{2-2}
+                        & Se analiza las diferencias entre las gráficas. \\ \hline
+                    \multirow{2}{4.5cm}{¿Número de coeficientes cambian cuando $T$ cambia?}
+                        & Se utilizan los resultados del objetivo 3 para analizar la igualdad de Parseval en cada caso. \\ \cline{2-2}
+                        & Se concluye si el valor de armónicos necesarios para tener una reconstrucción aceptable de la señal cambia o se mantiene. \\ \hline
+                    \multirow{2}{4.5cm}{¿Número de coeficientes cambian cuando se agregan ceros?}
+                        & Se utilizan los resultados del objetivo 4 para analizar la igualdad de Parseval en cada caso. \\ \cline{2-2}
+                        & Se concluye si el valor de armónicos necesarios para tener una reconstrucción aceptable de la señal cambia o se mantiene. \\ \hline
+                \end{tabular}
+            \end{center}
+            \caption{Plan de pruebas.}
+        \end{table}
 
     En esta sección explican de forma clara cómo fue el proceso para obtener los resultados:
     \begin{enumerate}
