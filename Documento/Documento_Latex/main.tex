@@ -1,6 +1,6 @@
 %Preamble
 \pdfminorversion=4
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage[spanish]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{tabularx} % extra features for tabular environment
@@ -244,21 +244,22 @@
     Después de realizar el análisis de los requerimientos anteriores, se plantea el siguiente \underline{esquema}
     \underline{general} para el desarrollo de la simulación:
     \\
-
-    \xymatrix{
-        *++[F-,]\text{1. Declaración de variables y espacios \\ vectoriales a utilizar\\
-            \bullet Se requiere debido a que se tienen variables \\ generales como el Periodo "T" que van a cambiar de \\
-                acuerdo a los objetivos clave a desarrollar y afectan a \\todo el desarrollo de la simulación.\\
-            \bullet Aquí se va a generar la señal original para realizar las \\ comparaciones posteriores.
-        } \ar[r] &
-        *++[F-,]\text{2. Calculo de los coeficientes de Fourier\\
-            \bullet Como se plantean escenarios donde los valores de \\Periodo y forma de la señal periodica cambián, se \\
-            hace necesario realizar cálculos simbólicos de los \\coeficientes Ao, An y Bn para generalizar la simulación \\ 
-            a todos los escenarios posibles de prueba.} \ar[r] &
-        
-    }
-
-    
+    \begin{center}
+         \xymatrix{
+            % primera fila
+            *++[F-,]\txt{1. Declaración de variables y espacios \\vectoriales  a utilizar} \ar[d] & &
+            *++[F-,]\txt{4. Criterios utilizados para justificar el \\numero de coeficientes necesarios para \\ 
+                reconstruir la señal} \ar{d}
+            \\
+            % segunda fila
+            *++[F-,]\txt{2. Calculo de los coeficientes de Fourier} \ar[d] & &
+            *++[F-,]\txt{5. Graficación de señales y espectro de la \\serie de Fourier}
+            \\
+            % tercer fila
+            *++[F-,]\txt{3. Reconstrución de la señal a partir del \\calculo de la Serie de Fourier}
+            \ar`r[ruu]`[rruu][rruu] % \ar[uuur]
+        }    
+    \end{center}
 
     Para la realización del script de simulación se utilizó el paradigma de programación estructurada, ya 
     que el mismo permite agilidad en el desarrollo del código, así como también facilita el desarrollo de los 
@@ -268,81 +269,174 @@
     el desarrollo del algoritmo de simulación, y, por lo tanto, un orden lógico y trazable de los resultados 
     esperados en la ejecución de este.\\
     
-    \subsection*{Plan de pruebas}
-        Retomando los 6 objetivos clave a desarrollar con la simulación; se plantea el siguiente plan de pruebas 
-        para cadaa uno de ellos:
+    \textbf{Plan de pruebas}\\
+    \\
+    Retomando los 6 objetivos clave a desarrollar con la simulación; se plantea el siguiente plan de pruebas 
+    para cadaa uno de ellos:
 
-        \begin{table}[H]
-            \begin{center}
-                \begin{tabular}{| m{5cm} | m{12cm} |}
-                    \hline
-                    \textbf{Objetivo Clave} & \textbf{Pruebas y Criterio de Satisfacción} \\ \hline
-                    \multirow{3}{4.5cm}{Reconstrucción de la señal} 
-                        & Se dibuja mediante la simulación la señal original y la señal reconstruida. \\ \cline{2-2} 
-                        & Se observan similitudes y diferencias. \\ \cline{2-2}
-                        & Se concluye si las señales son gráficamente similares o diferentes. \\ \hline
-                    \multirow{4}{4.5cm}{Justificación del número de Coeficientes}
-                        & Se calcula la igualdad de Parseval. \\ \cline{2-2} 
-                        & Se observa el fenómeno de Gibbs en la vecindad delas desigualdades de la señal. \\ \cline{2-2}
-                        & Se analizan los valores obtenidos con 5 diferentes números de armónicos. \\ \cline{2-2}
-                        & Se concluye el valor de armónicos necesarios para tener una reconstrucción 
-                        aceptable de la señal. \\ \hline
-                    \multirow{3}{4.5cm}{Análisis del espectro de magnitud cuando el periodo $T$ cambia}
-                        & Se dibuja y se analiza el espectro de magnitud con periodo $T=4$ y $N=100$. \\ \cline{2-2}
-                        & Se dibuja y se analiza el espectro de magnitud con el mismo $N$ y 3 valores diferentes 
-                        de periodo $T$. \\ \cline{2-2}
-                        & Se analiza las diferencias entre las gráficas. \\ \hline
-                    \multirow{3}{4.5cm}{Análisis del espectro de magnitud cuando se agregan ceros}
-                        & Se dibuja y se analiza el espectro de magnitud con periodo $T_r=4$, $N=100$ y periodo de ceros $T_0=0$. \\ \cline{2-2}
-                        & Se dibuja y se analiza el espectro de magnitud con el mismo $N$, $T_r$ y 3 valores diferentes de periodo de ceros $T_0$. \\ \cline{2-2}
-                        & Se analiza las diferencias entre las gráficas. \\ \hline
-                    \multirow{2}{4.5cm}{¿Número de coeficientes cambian cuando $T$ cambia?}
-                        & Se utilizan los resultados del objetivo 3 para analizar la igualdad de Parseval en cada caso. \\ \cline{2-2}
-                        & Se concluye si el valor de armónicos necesarios para tener una reconstrucción aceptable de la señal cambia o se mantiene. \\ \hline
-                    \multirow{2}{4.5cm}{¿Número de coeficientes cambian cuando se agregan ceros?}
-                        & Se utilizan los resultados del objetivo 4 para analizar la igualdad de Parseval en cada caso. \\ \cline{2-2}
-                        & Se concluye si el valor de armónicos necesarios para tener una reconstrucción aceptable de la señal cambia o se mantiene. \\ \hline
-                \end{tabular}
-            \end{center}
-            \caption{Plan de pruebas.}
-        \end{table}
-
-    En esta sección explican de forma clara cómo fue el proceso para obtener los resultados:
-    \begin{enumerate}
-        \item Aspectos fundamentales de su simulación. No me refiero a pantallazos del código 
-        (de hecho, eviten hacer eso en cualquier documento a menos de que les indiquen 
-        lo contrario, en cuyo caso es más aconsejable mandarlo a un apéndice), sino a 
-        consideraciones o suposiciones que hicieron para el planteamiento de la simulación, 
-        con el fin de que ésta tenga congruencia con la teoría y por lo tanto validez. 
-
-        \item Plan de pruebas. En caso de que su objetivo sea comprobar una hipótesis, entonces 
-        deben plantear un plan de pruebas, es decir, mostrar la forma en la que proponen 
-        variar parámetros de la simulación para crear diferentes escenarios que les permitan 
-        hacer la validación. Busquen crear escenarios en los que varíen una cosa a la vez, 
-        de tal forma que sea fácil interpretar los resultados, ya que saben qué es lo que está 
-        influenciando los cambios. Si crean escenarios en los que todo cambia al mismo 
-        tiempo, luego no será posible analizar el por qué de dichos resultados. 
-
-        \item Para proyectos más grandes, como sus trabajos de grado, es necesaria una guía, 
-        que permita plantear fases y conseguir una sumatoria resultados pequeños que 
-        conduzcan al objetivo final, por eso en esos casos en esta sección se describe la 
-        metodología utilizada; sin embargo, para nuestro caso no será así. 
-    \end{enumerate}
+    \begin{table}[h!]
+        \begin{center}
+            \begin{tabular}{| m{5cm} | m{10cm} |}
+                \hline
+                \textbf{Objetivo Clave} & \textbf{Pruebas y Criterio de Satisfacción} \\ \hline
+                \multirow{3}{4.5cm}{Reconstrucción de la señal} 
+                    & Se dibuja mediante la simulación la señal original y la señal reconstruida. \\ \cline{2-2} 
+                    & Se observan similitudes y diferencias. \\ \cline{2-2}
+                    & Se concluye si las señales son gráficamente similares o diferentes. \\ \hline
+                \multirow{4}{4.5cm}{Justificación del número de Coeficientes}
+                    & Se calcula la igualdad de Parseval. \\ \cline{2-2} 
+                    & Se observa el fenómeno de Gibbs en la vecindad delas desigualdades de la señal. \\ \cline{2-2}
+                    & Se analizan los valores obtenidos con 5 diferentes números de armónicos. \\ \cline{2-2}
+                    & Se concluye el valor de armónicos necesarios para tener una reconstrucción 
+                    aceptable de la señal. \\ \hline
+                \multirow{3}{4.5cm}{Análisis del espectro de magnitud cuando el periodo $T$ cambia}
+                    & Se dibuja y se analiza el espectro de magnitud con periodo $T=4$ y $N=100$. \\ \cline{2-2}
+                    & Se dibuja y se analiza el espectro de magnitud con el mismo $N$ y 3 valores diferentes 
+                    de periodo $T$. \\ \cline{2-2}
+                    & Se analiza las diferencias entre las gráficas. \\ \hline
+                \multirow{3}{4.5cm}{Análisis del espectro de magnitud cuando se agregan ceros}
+                    & Se dibuja y se analiza el espectro de magnitud con periodo $T_r=4$, $N=100$ y periodo de ceros $T_0=0$. \\ \cline{2-2}
+                    & Se dibuja y se analiza el espectro de magnitud con el mismo $N$, $T_r$ y 3 valores diferentes de periodo de ceros $T_0$. \\ \cline{2-2}
+                    & Se analiza las diferencias entre las gráficas. \\ \hline
+                \multirow{2}{4.5cm}{¿Número de coeficientes cambian cuando $T$ cambia?}
+                    & Se utilizan los resultados del objetivo 3 para analizar la igualdad de Parseval en cada caso. \\ \cline{2-2}
+                    & Se concluye si el valor de armónicos necesarios para tener una reconstrucción aceptable de la señal cambia o se mantiene. \\ \hline
+                \multirow{2}{4.5cm}{¿Número de coeficientes cambian cuando se agregan ceros?}
+                    & Se utilizan los resultados del objetivo 4 para analizar la igualdad de Parseval en cada caso. \\ \cline{2-2}
+                    & Se concluye si el valor de armónicos necesarios para tener una reconstrucción aceptable de la señal cambia o se mantiene. \\ \hline
+            \end{tabular}
+        \end{center}
+        \caption{Plan de pruebas.}
+    \end{table}
 
 \section*{Análisis de Resultados}
-    Recuerden que presentar resultados no es lo mismo que adjuntar mil y una imágenes de 
-    forma consecutiva. La sección de resultados es muy importante porque en ésta es en 
-    donde ustedes realizan el análisis y ojo que ANÁLISIS ES DIFERENTE DE DESCRIPCIÓN.\\
-    ... En la Figura 1 se observa que la línea roja por encima de la azul en todo 
-    momento... (Muy amable por su descripción, pero eso también lo estoy viendo yo).\\
-    ...Los resultados mostrados en la Figura 1 implican que para este escenario el método A 
-    es superior al método B, debido a que con el método A se favorecen...\\
-    La forma en la que ustedes interpretan lo que obtienen en la simulación me indica a mí su 
-    dominio del tema. Si hay un resultado que no tiene sentido no traten de forzar sobre él 
-    una explicación estrambótica, revisen si existen problemas en la simulación o el 
-    planteamiento, pero para esto ustedes deben tener el tema claro, de lo contrario no 
-    tendrán el criterio necesario para saber si el resultado tiene sentido o no.
+    Para la obtención de los resultados se realizaron dos scripts en MATLAB. En el primer script se 
+    realizó el calculo de los coefientes de Fourier de manera manual y se transcribieron los 
+    resultados al código. En dicha simulación, los coeficientes $A_n$ cuando $n$ es mayor que 0, se 
+    cancelaban. Esta primera simulación resultaba valida para reconstruir la señal original a partir de la 
+    expresión de la serie de Fourier, sin embargo, evaluar los diferentes escenarios de pruebas 
+    planteadas en el trabajo como agregar espacios en blanco o modificar el periodo de la señal 
+    requeriría de cambios drásticos en la escritura y evaluación del código.\\
+    \\
+    El anterior escenario fue motivación para realizar una segunda versión del script, que permitiera 
+    generalizar los escenarios planteados en el trabajo y permitiera alcanzar conclusiones completas 
+    del mismo.\\
+    \\
+    El segundo código realiza los cálculos de los coeficientes de manera simbólica, los cuales luego son 
+    evaluados en vectores numéricos aumentando así su velocidad de procesamiento. El límite 
+    practico en tiempo de ejecución se encontró en un valor cercano a los 5000 armónicos. Sin 
+    embargo, debido a que no es necesaria tal cantidad de cálculos, se acotó el máximo posible de 
+    armónicos a 100, los cuales permiten de manera suficiente alcanzar los objetivos esperados del 
+    trabajo.\\
+    \\
+    \textbf{Desarrollo del Objetivo Clave 1--Reconstrucción de la señal}
+
+    \begin{figure}[H]
+        \centering 
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure2_A.png}
+            \caption{Gráfica original.}
+            \label{figure2_A}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure2_B.png}
+            \caption{Gráfica reconstruida.}
+            \label{figure2_B}
+        \end{subfigure}
+        \caption{Gráficas del primer script.}
+        \label{figure2}
+    \end{figure}
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\linewidth]{img/figure3.png}
+        \caption{Gráfica sobrepuestas de la señal original y reconstruida.}
+        \label{figure3}
+    \end{figure}
+
+    En las figuras \ref{figure2_A}, \ref{figure2_B} y \ref{figure3} se puede observar el principal resultado visible de esta simulación: Al 
+    desarrollar computacionalmente la sumatoria de la serie de Fourier se obtiene como resultado 
+    una señal gráficamente muy similar a la señal original. Se observan similitudes en las regiones 
+    continuas del diente de sierra o rampa. Sin embargo, como es de esperarse, las señales no son 
+    completamente idénticas, ya que en los puntos de discontinuidad de la señal periódica original se 
+    generan picos de amplitud explicados por el fenómeno de Gibbs. Las figuras anteriormente 
+    expuestas corresponden a una simulación realizada con la sumatoria de los 100 primeros 
+    armónicos. Mas adelante se abordarán escenarios de simulación con diferentes cantidades de 
+    armónicos en la serie.\\
+    \\
+    \textbf{Desarrollo del Objetivo Clave 2--Justificación del Numero de Coeficientes}
+
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure4_A.png}
+            \caption{Gráfica 1 armónico.}
+            \label{figure4_A}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure4_B.png}
+            \caption{Gráfica 10 armónicos.}
+            \label{figure4_B}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure4_C.png}
+            \caption{Gráfica 50 armónicos.}
+            \label{figure4_C}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure4_D.png}
+            \caption{Gráfica 100 armónicos.}
+            \label{figure4_D}
+        \end{subfigure}
+        \caption{Gráficas sobrepuestas de las señales con diferente número de armónicos.}
+        \label{figure4}
+    \end{figure}
+
+    Para justificar la cantidad de coeficientes o armónicos que son necesarios para reconstruir está 
+    señal de manera adecuada, se usaran dos criterios diferentes: \textbf{La igualdad de Parseval} y el 
+    \textbf{fenómeno de Gibbs evaluado en el punto de la discontinuidad}.\\
+    \\
+    Se considerará que la cantidad de armónicos es suficiente cuando la relación entre los dos lados 
+    de la igualdad de Parseval \textbf{supere el 99\% de similitud}, esto es:
+
+    \begin{equation*}
+        \frac{2}{T} \int_{0}^{T} \left|f(t)\right|^2 dt=\frac{a_{0}^2}{2} + \sum_{n=1}^{n=narm} (a_{n}^2 +b_{n}^2)
+    \end{equation*}
+
+    Por lo tanto, para encontrar el ratio de similitud proponemos la siguiente expresión:
+
+    \begin{equation*}
+        100 \frac{\frac{2}{T} \int_{0}^{T} \left|f(t)\right|^2 dt}{\frac{a_{0}^2}{2} +\sum_{n=1}^{n=narm}(a_{n}^2 +b_{n}^2)} > 99
+    \end{equation*}
+
+    Evaluando en la simulación encontramos que en el armónico $narm=15$, el ratio de 
+    similitud supera el 99\% ubicándose en 99.0198\%. Esta es la señal reconstruida para ese 
+    número de armónicos:
     
+    \begin{figure}
+       \centering 
+       \includegraphics[width=0.9\linewidth]{img/figure5.png}
+       \caption{Gráficas sobrepuestas de las señales para 15 armónicos.}
+       \label{figure5}
+    \end{figure}
+
+    Como segundo criterio de confirmación de la cantidad de armónicos necesarios para la 
+    reconstrucción de la señal, evaluamos la vecindad de la discontinuidad en $t=3.5$ para 
+    confirmar que el valor de la señal reconstruida en la discontinuidad es igual a el valor 
+    medio de la suma de los limites por la izquierda y por la derecha en la señal original, es 
+    decir: 
+
+    \begin{equation*}
+       Sf(t_0) \cong \frac{f(t_0^+)+f(t_0^-)}{2}
+    \end{equation*}
+
+    donde $t_0=3.5$ que es el valor de la discontinuidad. Al evaluar en la simulación 
+    confirmamos que:\\
+    \\
+     $Sf(t_0)=\frac{f(t_0^+)+f(t_0^-)}{2}=0.5000$ por lo que se confirma que el fenómeno de Gibbs 
+     en la desigualdad converge a su valor medio. Por lo tanto, verificamos que 15 armónicos 
+     son suficientes para tener una reconstrucción aceptable de la señal.
+
 \section*{Conclusiones}
     Aunque puede parecer que gastaron sus mejores ideas en la sección de análisis, la 
     diferencia de las conclusiones es que en este punto ustedes tienen una visión completa 
