@@ -96,12 +96,14 @@
     \end{equation}
     
     Donde los términos $a_{0}$, $a_{n}$ y $b_{n}$ son los coeficientes de la serie de Fourier, de los cuales
-    es necesario realizar cálculos para encontrar sus valores y lograr representar la serie de la señal dada.
+    es necesario realizar cálculos para encontrar sus valores y lograr representar la serie de la señal dada.\\
+    \\
+    El desarrollo de este documento esta constituido por una sesión que brinda información 
+    de como se obtuvo las diferentes expresiones y el plan de pruebas, que hacen posible la 
+    realización de diferentes escenarios para la simulación. \\
+    \\
 
-    La razón por la que unicamente se realizan los cálculos de la serie trigonométrica de 
-    Fourier es por la necesidad de obtener resultados para el espectro de magnitud, sin 
-    embargo, no quiere decir que con la serie compleja no sea posible, si no que con la serie 
-    trigonométrica se puede llagar directamente con los coeficientes que se calculan de ella.
+    
 
     Recuerden que cantidad no necesariamente implica calidad, por lo que la mejor apuesta 
     es ser concisos y no crear un Frankenstein com información de otras fuentes, dicho de 
@@ -207,7 +209,7 @@
     \end{equation}
 
     los resultados obtenidos al realizar los cálculos para los coeficientes son los siguientes (los cálculos que 
-    se presentan en este documento están simplificados, por tal motivo se anexa el paso a paso en el apartado de 
+    se presentan en este documento están simplificados, por tal motivo se integra el paso a paso en el apartado de 
     Anexos):\\
 
     \begin{itemize}
@@ -242,6 +244,13 @@
         \label{equation9}
     \end{multline}
 
+    Ahora que se ha obtenido la expresión que representa la serie de Fourier de la señal, se procederá a realizar 
+    un análisis de la serie de Fourier a través de una simulación realizada en computadora, en ella podremos 
+    visualizar como se resuelve para cientos, o incluso miles, de componentes. Podemos comprobar qué tan buena 
+    es la representación reconstruyendo la señal utilizando diferentes cantidades de componentes, para esto 
+    se realizaran pruebas con un Script desarrollado en MATLAB.\\
+    \\
+    
 
     En esta sección explican de forma clara cómo fue el proceso para obtener los resultados:
     \begin{enumerate}
