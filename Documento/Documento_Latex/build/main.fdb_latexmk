@@ -1,5 +1,5 @@
 # Fdb version 3
-["pdflatex"] 1615079043 "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/main.tex" "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/build/main.pdf" "main" 1615079059
+["pdflatex"] 1615120460 "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/main.tex" "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/build/main.pdf" "main" 1615120507
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex7.tfm" 1233951848 1004 54797486969f23fa377b128694d548df ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/cmextra/cmex8.tfm" 1233951848 988 bdf658c3bfc2d96d3c8b02cfc1c94c20 ""
   "C:/Program Files/MiKTeX/fonts/tfm/public/amsfonts/symbols/msam10.tfm" 1233951854 916 f87d7c45f9c908e672703b83b72241a3 ""
@@ -112,16 +112,16 @@
   "C:/Users/Nicolas Chicaiza/AppData/Roaming/MiKTeX/tex/latex/ucs/uni-global.def" 1368440143 1375 8a855db83af5d6753ccbbd32e6a8a901 ""
   "C:/Users/Nicolas Chicaiza/AppData/Roaming/MiKTeX/tex/latex/ucs/utf8x.def" 1369148985 8240 21f7ac37aafb6cfeddbb196b8bfd6280 ""
   "Escudo.jpg" 1613409551 705753 48ca27fa13c5e68729775746a3cad514 ""
-  "build/main.aux" 1615079059 1868 90971805e04e0a93d223912ff2fd73d4 "pdflatex"
-  "build/main.out" 1615079056 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
-  "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/build/main.aux" 1615079059 1868 90971805e04e0a93d223912ff2fd73d4 ""
-  "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/main.tex" 1615079038 16523 be0c19f5991ad5e3e85e1cdbfd1c12cb ""
+  "build/main.aux" 1615120472 1868 90971805e04e0a93d223912ff2fd73d4 "pdflatex"
+  "build/main.out" 1615120470 0 d41d8cd98f00b204e9800998ecf8427e "pdflatex"
+  "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/build/main.aux" 1615120472 1868 90971805e04e0a93d223912ff2fd73d4 ""
+  "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/main.tex" 1615120455 16541 ab798cd2847d70b61218083c6aa3f0a4 ""
   "img/figure1.png" 1614961136 32456 a6eaf08ce9e4127d52fb81623c82bfb0 ""
-  "main.tex" 1615079038 16523 be0c19f5991ad5e3e85e1cdbfd1c12cb ""
+  "main.tex" 1615120455 16541 ab798cd2847d70b61218083c6aa3f0a4 ""
   (generated)
   "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/build/main.log"
   "build/main.aux"
   "d:/Archivos de usuario/Documentos/Sourcetree/TTL1/Trabajo 1/Documento/Documento_Latex/build/main.pdf"
+  "build/main.out"
   "build/main.pdf"
   "build/main.log"
-  "build/main.out"
