@@ -1,6 +1,6 @@
 %Preamble
 \pdfminorversion=4
-\documentclass[8pt]{article}
+\documentclass[7pt]{article}
 \usepackage[spanish]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{tabularx} % extra features for tabular environment
@@ -106,6 +106,7 @@
     \\
     El desarrollo de este documento esta constituido por una sesión que brinda información 
     de como se obtuvo las diferentes expresiones y el plan de pruebas, que hacen posible la 
+    implementación de variados escenarios en la simulación.
    
 \section*{Metodología}
     La metodología empleada para el desarrollo de la serie de Fourier a la señal planteada se 
@@ -247,7 +248,8 @@
     \begin{center}
          \xymatrix{
             % primera fila
-            *++[F-,]\txt{1. Declaración de variables y espacios \\vectoriales  a utilizar} \ar[d] & &
+            *++[F-,]\txt{1. Declaración de variables y espacios \\
+                vectoriales  a utilizar} \ar[d] & &
             *++[F-,]\txt{4. Criterios utilizados para justificar el \\numero de coeficientes necesarios para \\ 
                 reconstruir la señal} \ar{d}
             \\
@@ -274,7 +276,7 @@
     Retomando los 6 objetivos clave a desarrollar con la simulación; se plantea el siguiente plan de pruebas 
     para cadaa uno de ellos:
 
-    \begin{table}[h!]
+    \begin{table}[H]
         \begin{center}
             \begin{tabular}{| m{5cm} | m{10cm} |}
                 \hline
@@ -551,8 +553,18 @@
     los periodos a evaluar y a observar el fenómeno de Gibbs en las discontinuidades, como se hizo en 
     el Objetivo 2.
 
-    \begin{table}
-        
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{| m{2.5cm} | m{2.5cm} | m{2.5cm} | m{2.5cm} | m{2.5cm} |}
+                \hline
+                \textbf{Número de Armónicos} & \textbf{Periodo} & \textbf{Valor de la Relación de Parseval} & \textbf{Valor de la Serie en la discontinuidad} & \textbf{Valor medio en la discontinuidad} \\ \hline
+                15 & 0.1 & 99.0198 & 0.5 & 0.5 \\ \hline
+                15 & 1 & 99.0198 & 0.5 & 0.5 \\ \hline
+                15 & 4 & 99.0198 & 0.5 & 0.5 \\ \hline
+                15 & 8 & 99.0198 & 0.4850 & 0.5 \\ \hline
+                15 & 100 & 99.0198 & 0.5 & 0.5 \\ \hline
+            \end{tabular}
+        \end{center}
     \end{table}
 
     De los valores en la tabla se puede concluir que el cambio en el periodo del diente de 
@@ -570,19 +582,120 @@
     y tomando ese valor.\\
     \\
     \textbf{Desarrollo del Objetivo Clave 6 -- ¿El número de coeficientes requeridos cambian cuando se agregan ceros}
+    \\\\
+    Tomando como referencia los mismos valores del Objetivo 4; se simulan los mismos 
+    escenarios: $T_0=(0,4,8,100,1000)$. Se agrega el valor de 1000 con el objetivo de evaluar si la 
+    forma de la señal reconstruida mantiene su integridad. El periodo de la rampa se mantiene 
+    constante en 4 segundos.
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{| m{2.5cm} | m{2.5cm} | m{2.5cm} | m{2.5cm} | m{2.5cm} |}
+                \hline
+                \textbf{Número de Armónicos} & \textbf{Periodo de duración de los ceros} & \textbf{Valor de la Relación de Parseval} & \textbf{Valor de la Serie en la discontinuidad} & \textbf{Valor medio en la discontinuidad} \\ \hline
+                15 & 0 & 99.0198 & 0.5 & 0.5 \\ \hline
+                15 & 4 & 98.0391 & 0.5087 & 0.5 \\ \hline
+                15 & 8 & 97.0611 & 0.5095 & 0.5 \\ \hline
+                15 & 100 & 70.4557 & 0.5015 & 0.5 \\ \hline
+                15 & 1000 & 9.2372 & 0.0616 & 0.5 \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    Es evidente que al igual que en el objetivo 4, el agregar ceros a la función original modifica 
+    de manera importante a la señal reconstruida. Para este caso se observa que, para cada 
+    escenario de simulación, es necesario aumentar el numero de armónicos si se quiere 
+    continuar con el criterio de aceptación de la señal.
+
+    \begin{figure}[H]
+        \centering 
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure8_A.png}
+            \caption{Gráfica de la señal reconstruida sobrepuesta a la original para un periodo de ceros de 4 segundos.}
+            \label{figure8_A}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure8_B.png}
+            \caption{Gráfica de la señal reconstruida sobrepuesta a la original para un periodo de ceros de 1000 segundos.}
+            \label{figure8_B}
+        \end{subfigure}
+        \label{figure8}
+    \end{figure}
+
+    Se encuentra por sustitución el número de armónicos requeridos para obtener 
+    nuevamente el criterio establecido del 99 por ciento, encontrando así los siguientes 
+    valores:
+
+    \begin{table}[H]
+        \begin{center}
+            \begin{tabular}{| m{2.5cm} | m{2.5cm} | m{2.5cm} | m{2.5cm} | m{2.5cm} |}
+                \hline
+                \textbf{Número de Armónicos} & \textbf{Periodo de duración de los ceros} & \textbf{Valor de la Relación de Parseval} & \textbf{Valor de la Serie en la discontinuidad} & \textbf{Valor medio en la discontinuidad} \\ \hline
+                15 & 0 & 99.0198 & 0.5 & 0.5 \\ \hline
+                30 & 4 & 99.0034 & 0.5266 & 0.5 \\ \hline
+                46 & 8 & 99.0192 & 0.4662 & 0.5 \\ \hline
+                395 & 100 & 99.0009 & 0.2371 & 0.5 \\ \hline
+                3815 & 1000 & 99.0002 & 0.8631 & 0.5 \\ \hline
+            \end{tabular}
+        \end{center}
+    \end{table}
+
+    Se concluye que el número de armónicos requeridos para tener una reconstrucción 
+    adecuada de la señal aumenta proporcionalmente a la duración del periodo de ceros 
+    añadido.
+
+    \begin{figure}[H]
+        \centering 
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure9_A.png}
+            \caption{Señal de periodo de ceros 4 seg. reconstruida con los armónicos requeridos.}
+            \label{figure9_A}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure9_B.png}
+            \caption{Señal de periodo de ceros 1000 seg. reconstruida con los armónicos requeridos.}
+            \label{figure9_B}
+        \end{subfigure}
+        \label{figure9}
+    \end{figure}
+        
+    Sin embargo, a pesar de que el criterio de la igualdad de Parseval se puede mantener, no 
+    se puede decir lo mismo del criterio de Gibbs. Esto ocurre debido a que, para valores del 
+    periodo de ceros muy grande, el \textbf{fenómeno de Gibbs} añade demasiada oscilación en la 
+    vecindad de la discontinuidad. Una forma de solucionar esto es aumentar el tiempo de 
+    muestreo en el vector del tiempo (eje de abscisas para la serie), sin embargo, el tiempo 
+    computacional requerido por el número de armónicos tan grande crecería, además, 
+    proporcionalmente al aumento en el valor del muestreo; Por lo que la simulación se toma 
+    computacionalmente difícil.
+
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=0.5\textwidth]{img/figure10.png}
+        \caption{Fenómeno de Gibbs evidenciado en la señal de periodo de ceros de 1000 segundos.}
+        \label{figure10}
+    \end{figure}
 
 \section*{Conclusiones}
-    Aunque puede parecer que gastaron sus mejores ideas en la sección de análisis, la 
-    diferencia de las conclusiones es que en este punto ustedes tienen una visión completa 
-    del trabajo, ya han abordado todas las fases y por lo tanto están en la capacidad de 
-    realizar un compendio de los aprendizajes obtenidos.\\
-    Esos aprendizajes deben estar estrechamente relacionados con lo que buscan en el 
-    trabajo, con lo que plantearon en el pro qué y el para qué en la introducción. Si esto fuera 
-    su trabajo de grado, las conclusiones deben estar relacionadas con los objetivos de ese 
-    trabajo.\\
-    Lo anterior implica que la siguiente conclusión no es una conclusión válida:\\
-    ... MATLAB es un entorno de simulación muy adecuado, ya que permite implementar 
-    sistemas de telecomunicaciones...
+    
+    Se concluye que una adecuada optimización del código es necesaria para la evaluación de cantidades 
+    considerables de armónicos. Una inadecuada implementación del código puede llevar a hacer inviable 
+    la simulación en situaciones de múltiples repeticiones. Además el uso de cálculos numéricos en vez 
+    de cálculos simbólicos acelera el tiempo de ejecución del algoritmo de simulación.\\
+    \\
+    Un adecuado plan de pruebas es necesario antes de iniciar con la construcción de un algoritmo 
+    de simulación. Esto debido a que si se inicia construyendo primero la simulación, se corre el 
+    riesgo de perder trabajo debido a un inadecuado planteamiento del algoritmo.\\
+    \\
+    La igualdad de Parseval es una herramienta simple y adecuada para evaluar si la reconstrucción de 
+    una señal a partir de la serie de Fourier es adecuada o no. Por otro lado, el criterio de Gibbs 
+    presenta dificultades para su evaluación en sistemas de tiempo discreto como lo es una simulación 
+    computacional. Esto debido a la incertidumbre generada en los puntos de desigualdad y al error de 
+    cuantificación que se introduce debido a ello.\\
+    \\
+    Agregar ceros entre las repeticiones de un pulso periódico causa que el espectro de magnitud 
+    se empiece a asemejar al espectro de magnitud de un tren de pulsos rectangulares. Otro aspecto a 
+    considerar es el desplazamiento temporal de una función periódica no causa modificaciones a su espectro 
+    magnitud. 
 
 \begin{thebibliography}{99}
     \bibitem{diapositivas}
