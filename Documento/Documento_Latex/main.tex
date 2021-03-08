@@ -1,6 +1,6 @@
 %Preamble
 \pdfminorversion=4
-\documentclass[11pt]{article}
+\documentclass[8pt]{article}
 \usepackage[spanish]{babel}
 \usepackage[utf8x]{inputenc}
 \usepackage{tabularx} % extra features for tabular environment
@@ -415,7 +415,7 @@
     
     \begin{figure}
        \centering 
-       \includegraphics[width=0.9\linewidth]{img/figure5.png}
+       \includegraphics[width=0.5\linewidth]{img/figure5.png}
        \caption{Gráficas sobrepuestas de las señales para 15 armónicos.}
        \label{figure5}
     \end{figure}
@@ -435,7 +435,141 @@
     \\
      $Sf(t_0)=\frac{f(t_0^+)+f(t_0^-)}{2}=0.5000$ por lo que se confirma que el fenómeno de Gibbs 
      en la desigualdad converge a su valor medio. Por lo tanto, verificamos que 15 armónicos 
-     son suficientes para tener una reconstrucción aceptable de la señal.
+     son suficientes para tener una reconstrucción aceptable de la señal. \\
+     \\
+     \textbf{Desarrollo del Objetivo Clave 3 -- Análisis del espectro de magnitud cuando el periodo $T$ cambia}
+     \\
+     \\
+     Para desarrollar este objetivo clave se realizaron 4 escenarios diferentes de simulación variando la 
+     duración del diente de sierra, es decir, su periodo. Se realiza las simulaciones con un número 
+     de 100 armónicos; esto se hace para poder apreciar mejor el espectro de magnitud 
+     discreto con los 100 valores obtenidos.
+
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure6_A.png}
+            \caption{Gráfica 0.1 segundos.}
+            \label{figure6_A}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure6_B.png}
+            \caption{Gráfica 1 segundo.}
+            \label{figure6_B}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure6_C.png}
+            \caption{Gráfica 4 segundos.}
+            \label{figure6_C}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure6_D.png}
+            \caption{Gráfica 8 segundos.}
+            \label{figure6_D}
+        \end{subfigure}
+        \caption{Gráficas del espectro de magnitud en 4 valores de $T$ diferentes.}
+        \label{figure6}
+    \end{figure}
+
+    se puede apreciar que las magnitudes de cada armónico se mantienen iguales en todos 
+    los periodos simulados. Esto indica que el \textbf{cambio en el periodo de la señal no afecta a las 
+    magnitudes} debido a que la \textbf{forma de la señal periódica permanece igual y el periodo es 
+    compensado por el cambio de la pendiente de la rampa}, por lo cual las integrales que 
+    definen a los coeficientes permanecen iguales ya que sus periodos se normalizan. Para el 
+    periodo afecta directamente a la frecuencia.\\
+    \\
+    Se puede concluir que un cambio en el periodo de la señal únicamente cambia el valor de 
+    frecuencia normalizada al que pertenece cada armónico. Para periodos mas pequeños, se 
+    tiene que la frecuencia aumente, y para periodos grandes la frecuencia disminuye tal cual 
+    la definición formal de frecuencia:
+    
+    \begin{equation}
+        f=\frac{1}{T}
+    \end{equation}
+
+     \textbf{Desarrollo del Objetivo Clave 4 -- Análisis del espectro de magnitud cuando se agregan ceros}
+
+     En este escenario se simulan ceros añadidos al terminar cada diente de sierra; el periodo del 
+     diente se mantiene constante en 4 segundos, y se varia la longitud de los ceros en 4 escenarios: sin 
+     ceros, 4 segundos, 8 segundos y 100 segundos de ceros. El periodo se esta \textbf{nueva señal resultante}
+     está definido por: $T=\frac{1}{T_0+T_r}$ donde $T_0$ es el periodo de duración de los ceros y $T_r$ es el periodo 
+     del pulso diente de sierra. Este cambio en el periodo completo de la señal afecta directamente el 
+     calculo de los coeficientes debido al cambio que existe en la frecuencia fundamental dentro de las 
+     integrales. Para estos casos, los coeficientes $A_n$ ya no se cancelan y se forman otro tipo de 
+     coeficientes basados en la función seno cardinal.
+
+    \begin{figure}[H]
+        \centering
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure7_A.png}
+            \caption{Gráfica 0 segundos.}
+            \label{figure7_A}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure7_B.png}
+            \caption{Gráfica 4 segundos.}
+            \label{figure7_B}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure7_C.png}
+            \caption{Gráfica 8 segundos.}
+            \label{figure7_C}
+        \end{subfigure}
+        \begin{subfigure}[h]{0.45\linewidth}
+            \includegraphics[width=\linewidth]{img/figure7_D.png}
+            \caption{Gráfica 100 segundos.}
+            \label{figure7_D}
+        \end{subfigure}
+        \caption{Gráficas del espectro de magnitud en 4 valores de $T$ diferentes.}
+        \label{figure7}
+    \end{figure}
+
+    Se puede evidenciar que para este caso si existen cambios en las componentes del 
+    espectro de magnitud. Hay tres cambios principales:
+
+    \begin{enumerate}
+        \item Cambio en la amplitud de las magnitudes de los armónicos, los cuales tienden a 
+            disminuir cuando se aumenta la longitud de los ceros. Esto nos indica que entre 
+            mas se aumenten los ceros, la magnitud y por lo tanto la energía de la señal tiende 
+            a cero.
+        \item Cambio en la frecuencia normalizada de cada armónico debido al cambio de la 
+            frecuencia de la nueva señal resultante.
+        \item Cambio en la diferencia de magnitud entre cada armónico la cual se presenta 
+            porque todos los armónicos sin excepción tienden a aproximarse a cero.
+    \end{enumerate}
+
+    En la ultima gráfica puede apreciarse que la envolvente del espectro de magnitud tiene la 
+    forma de un seno cardinal rectificado, pero sin cruces por cero, esto debido al cambio en 
+    la composición de los coeficientes antes mencionada.
+
+    \textbf{Desarrollo del Objetivo Clave 5 -- ¿El número de coeficientes requeridos cambian cuando $T$ cambia?}
+    \\\\
+    Los valores que se toman para este escenario son $T=(0.1,1,4,8,100)$, es decir, los mismos 
+    periodos que para el Objetivo 3 sin ceros añadidos; se adiciona el valor de 100 para llevar el 
+    periodo a un valor mucho más grande que el valor del periodo original de la señal. En esta 
+    ocasión se limita a simular y comparar los resultados de la identidad de Parseval para cada uno de 
+    los periodos a evaluar y a observar el fenómeno de Gibbs en las discontinuidades, como se hizo en 
+    el Objetivo 2.
+
+    \begin{table}
+        
+    \end{table}
+
+    De los valores en la tabla se puede concluir que el cambio en el periodo del diente de 
+    sierra no afecta el número de armónicos requeridos como mínimo para reconstruir la 
+    señal. Esto ocurre debido a que las funciones periódicas que componen a los coeficientes 
+    se ajustan proporcionalmente al ancho del pulso, modificando de forma proporcional su 
+    frecuencia fundamental.\\
+    \\
+    Para el caso del valor de la serie en la discontinuidad para el periodo $T=8$, este desfase 
+    ocurre porque la simulación computarizada no tiene valores infinitos para definir el vector 
+    de tiempo y el vector de la serie de Fourier. Todos los valores son discretos, por lo que hay 
+    escenarios en los cuales el tiempo $t$ no esta definido para el valor exacto donde se 
+    presenta la discontinuidad. Esto hace que se presente un error de cuantificación el cual se 
+    evade parcialmente en la simulación encontrando el valor más cercano a la discontinuidad 
+    y tomando ese valor.\\
+    \\
+    \textbf{Desarrollo del Objetivo Clave 6 -- ¿El número de coeficientes requeridos cambian cuando se agregan ceros}
 
 \section*{Conclusiones}
     Aunque puede parecer que gastaron sus mejores ideas en la sección de análisis, la 

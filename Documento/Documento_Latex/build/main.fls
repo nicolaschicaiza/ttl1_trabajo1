@@ -13,11 +13,10 @@ INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
 INPUT C:\Program Files\MiKTeX\tex\latex\base\article.cls
-INPUT C:\Program Files\MiKTeX\tex\latex\base\size11.clo
-INPUT C:\Program Files\MiKTeX\tex\latex\base\size11.clo
-INPUT C:\Program Files\MiKTeX\tex\latex\base\size11.clo
-INPUT C:\Program Files\MiKTeX\tex\latex\base\size11.clo
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr10.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Program Files\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Program Files\MiKTeX\tex\latex\base\size10.clo
+INPUT C:\Program Files\MiKTeX\tex\latex\base\size10.clo
 INPUT C:\Program Files\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\babel\babel.sty
 INPUT C:\Program Files\MiKTeX\tex\generic\babel\babel.sty
@@ -1016,9 +1015,28 @@ INPUT d:\Archivos de usuario\Documentos\Sourcetree\TTL1\Trabajo 1\Documento\Docu
 INPUT d:\Archivos de usuario\Documentos\Sourcetree\TTL1\Trabajo 1\Documento\Documento_Latex\build\main.out
 OUTPUT d:\Archivos de usuario\Documentos\Sourcetree\TTL1\Trabajo 1\Documento\Documento_Latex\build\main.out
 OUTPUT d:\Archivos de usuario\Documentos\Sourcetree\TTL1\Trabajo 1\Documento\Documento_Latex\build\main.pdf
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam5.tfm
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm5.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr6.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi10.tfm
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
@@ -1027,28 +1045,12 @@ INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy6.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex8.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\cmextra\cmex7.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsa.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam7.tfm
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
-INPUT C:\Program Files\MiKTeX\tex\latex\amsfonts\umsb.fd
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm7.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr17.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmmi12.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmsy10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmex10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msam10.tfm
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\amsfonts\symbols\msbm10.tfm
 INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-0.def
 INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-0.def
 INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-0.def
@@ -1080,11 +1082,11 @@ INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
 INPUT .\Escudo.jpg
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
 INPUT .\Escudo.jpg
-INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmbx10.tfm
 INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
@@ -1096,6 +1098,7 @@ INPUT .\img\figure2_A.png
 INPUT .\img\figure2_A.png
 INPUT .\img\figure2_A.png
 INPUT .\img\figure2_A.png
+INPUT C:\Program Files\MiKTeX\fonts\tfm\public\cm\cmr9.tfm
 INPUT .\img\figure2_B.png
 INPUT .\img\figure2_B.png
 INPUT img\figure2_B.png
@@ -1103,10 +1106,6 @@ INPUT .\img\figure2_B.png
 INPUT .\img\figure2_B.png
 INPUT .\img\figure2_B.png
 INPUT .\img\figure2_B.png
-INPUT .\Escudo.jpg
-INPUT .\Escudo.jpg
-INPUT Escudo.jpg
-INPUT .\Escudo.jpg
 INPUT .\img\figure3.png
 INPUT .\img\figure3.png
 INPUT img\figure3.png
@@ -1114,6 +1113,10 @@ INPUT .\img\figure3.png
 INPUT .\img\figure3.png
 INPUT .\img\figure3.png
 INPUT .\img\figure3.png
+INPUT .\Escudo.jpg
+INPUT .\Escudo.jpg
+INPUT Escudo.jpg
+INPUT .\Escudo.jpg
 INPUT .\img\figure4_A.png
 INPUT .\img\figure4_A.png
 INPUT img\figure4_A.png
@@ -1146,10 +1149,6 @@ INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
 INPUT .\Escudo.jpg
-INPUT .\Escudo.jpg
-INPUT .\Escudo.jpg
-INPUT Escudo.jpg
-INPUT .\Escudo.jpg
 INPUT .\img\figure5.png
 INPUT .\img\figure5.png
 INPUT img\figure5.png
@@ -1161,10 +1160,78 @@ INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
 INPUT .\Escudo.jpg
+INPUT .\img\figure6_A.png
+INPUT .\img\figure6_A.png
+INPUT img\figure6_A.png
+INPUT .\img\figure6_A.png
+INPUT .\img\figure6_A.png
+INPUT .\img\figure6_A.png
+INPUT .\img\figure6_A.png
+INPUT .\img\figure6_B.png
+INPUT .\img\figure6_B.png
+INPUT img\figure6_B.png
+INPUT .\img\figure6_B.png
+INPUT .\img\figure6_B.png
+INPUT .\img\figure6_B.png
+INPUT .\img\figure6_B.png
+INPUT .\img\figure6_C.png
+INPUT .\img\figure6_C.png
+INPUT img\figure6_C.png
+INPUT .\img\figure6_C.png
+INPUT .\img\figure6_C.png
+INPUT .\img\figure6_C.png
+INPUT .\img\figure6_C.png
+INPUT .\img\figure6_D.png
+INPUT .\img\figure6_D.png
+INPUT img\figure6_D.png
+INPUT .\img\figure6_D.png
+INPUT .\img\figure6_D.png
+INPUT .\img\figure6_D.png
+INPUT .\img\figure6_D.png
+INPUT .\Escudo.jpg
+INPUT .\Escudo.jpg
+INPUT Escudo.jpg
+INPUT .\Escudo.jpg
+INPUT .\img\figure7_A.png
+INPUT .\img\figure7_A.png
+INPUT img\figure7_A.png
+INPUT .\img\figure7_A.png
+INPUT .\img\figure7_A.png
+INPUT .\img\figure7_A.png
+INPUT .\img\figure7_A.png
+INPUT .\img\figure7_B.png
+INPUT .\img\figure7_B.png
+INPUT img\figure7_B.png
+INPUT .\img\figure7_B.png
+INPUT .\img\figure7_B.png
+INPUT .\img\figure7_B.png
+INPUT .\img\figure7_B.png
+INPUT .\img\figure7_C.png
+INPUT .\img\figure7_C.png
+INPUT img\figure7_C.png
+INPUT .\img\figure7_C.png
+INPUT .\img\figure7_C.png
+INPUT .\img\figure7_C.png
+INPUT .\img\figure7_C.png
+INPUT .\img\figure7_D.png
+INPUT .\img\figure7_D.png
+INPUT img\figure7_D.png
+INPUT .\img\figure7_D.png
+INPUT .\img\figure7_D.png
+INPUT .\img\figure7_D.png
+INPUT .\img\figure7_D.png
+INPUT .\Escudo.jpg
+INPUT .\Escudo.jpg
+INPUT Escudo.jpg
+INPUT .\Escudo.jpg
 INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
 INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
 INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
 INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\tex\latex\ucs\uni-32.def
+INPUT .\Escudo.jpg
+INPUT .\Escudo.jpg
+INPUT Escudo.jpg
+INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT .\Escudo.jpg
 INPUT Escudo.jpg
@@ -1180,24 +1247,28 @@ INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmex10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi5.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmmi7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr12.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr6.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr5.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr5.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmr9.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmss10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmss10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy10.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy6.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
-INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy8.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy5.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy5.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
+INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmsy7.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
 INPUT C:\Program Files\MiKTeX\fonts\type1\public\amsfonts\cm\cmtt12.pfb
 INPUT C:\Users\Nicolas Chicaiza\AppData\Roaming\MiKTeX\fonts\type1\public\xypic\xyatip10.pfb
