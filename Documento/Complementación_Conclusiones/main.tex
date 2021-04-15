@@ -1,0 +1,135 @@
+%Preamble
+\documentclass[11pt]{article}
+\brokenpenalty=10000 
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{times}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{tabularx} % extra features for tabular environment
+\usepackage{amsmath}  % improve math presentation
+\usepackage{graphicx} % takes care of graphic including machinery
+\usepackage{geometry} % decreases margins
+\usepackage{cite} % takes care of citations
+\usepackage[final]{hyperref} % adds hyper links inside the generated pdf file
+\usepackage{booktabs}
+\usepackage{subcaption}
+\usepackage{fancyhdr}
+\usepackage{authblk}
+\usepackage{parskip}
+\usepackage{amssymb, amsmath} % Paquetes matemáticos de la American Mathematical Society
+\usepackage{float}
+\usepackage{multirow}
+\usepackage[all]{xy}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usetikzlibrary{calc}
+\usetikzlibrary{fit}
+%\usepackage{showframe}
+
+\geometry{
+    papersize = {216mm, 279mm},
+    width = 19.6cm,
+    height = 25cm,
+    headsep = 5mm,
+    head = 2.8cm,
+    marginpar = 5mm,
+    includeall,
+}
+
+\fancyhf{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyhead[LO,LE]{
+    \begin{minipage}{3cm}
+        \includegraphics[width=0.7\textwidth]{Escudo.jpg}
+    \end{minipage}
+}
+\fancyhead[RO,RE]{
+    \textsf{
+        Correción conclusiones Trabajo 1\\
+        Teoría de telecomunicaciones I, Grupo A12\\
+        \date{\today}   
+    }
+}
+\fancyfoot[C]{\thepage}
+
+\pagestyle{fancy}
+
+\hypersetup{
+	colorlinks=true,       % false: boxed links; true: colored links
+	linkcolor=black,        % color of internal links
+	citecolor=black,        % color of links to bibliography
+	filecolor=magenta,     % color of file links
+	urlcolor=blue         
+}
+\spanishdecimal{.}
+
+%++++++++++++++++++++++++++++++++++++++++
+%Content
+\usepackage[small,compact]{titlesec}
+\titleformat{\subsubsection}[runin]
+            {\normalfont\it}
+            {\thesubsubsection}{0.5em}{}[:]
+
+\renewcommand*{\Authsep}{, }
+\renewcommand*{\Authand}{ y }
+\renewcommand*{\Authands}{, }
+\renewcommand*{\Affilfont}{\normalsize}
+%\renewcommand*{\Authfont}{\bfseries}    % make author names boldface    
+\setlength{\affilsep}{0.5em}   % set the space between author and affiliation
+
+\title{
+    \fontsize{26}{26}\selectfont 
+    \textbf{Series de Fourier}}
+
+\author[1]{Jefry Nicolás Chicaiza}
+\author[2]{Jose Nicolás Zambrano}
+\affil[1]{jefryn@unicauca.edu.co}
+\affil[2]{jnzambranob@unicauca.edu.co}
+\date{}
+
+\begin{document}
+\maketitle
+\thispagestyle{fancy}
+\begin{abstract}
+    Este documento presenta la corrección de las conclusiones del Trabajo 1, se agregan 
+    las conclusiones validas y las conclusiones que se destacan con las correcciones que 
+    se le hicieron al trabajo en general mencionadas por el tutor de la asignatura.       
+\end{abstract}
+\begin{multicols}{2}
+\section*{Conclusiones en el informe entregado}
+    Se concluye que una adecuada optimización del código es necesaria para la evaluación de cantidades 
+    considerables de armónicos. Una inadecuada implementación del código puede llevar a hacer inviable 
+    la simulación en situaciones de múltiples repeticiones. Además el uso de cálculos numéricos en vez 
+    de cálculos simbólicos acelera el tiempo de ejecución del algoritmo de simulación.
+    
+    Un adecuado plan de pruebas es necesario antes de iniciar con la construcción de un algoritmo 
+    de simulación. Esto debido a que si se inicia construyendo primero la simulación, se corre el 
+    riesgo de perder trabajo debido a un inadecuado planteamiento del algoritmo.
+    
+    La igualdad de Parseval es una herramienta simple y adecuada para evaluar si la reconstrucción de 
+    una señal a partir de la serie de Fourier es adecuada o no. Por otro lado, el criterio de Gibbs 
+    presenta dificultades para su evaluación en sistemas de tiempo discreto como lo es una simulación 
+    computacional. Esto debido a la incertidumbre generada en los puntos de desigualdad y al error de 
+    cuantificación que se introduce debido a ello.
+
+\section*{Conclusiones de corrección}
+    La realización de los cálculos analíticos antes de realizar una simulación de un algoritmo de bajo
+    o alto nivel, es importante para conocer los resultados a los que se quiere llegar. Además el uso 
+    de esta comparación se presta como una herramienta para comprender de forma más precisa lo que 
+    ocurre al aplicar los diferentes teoremas del documento guiá del trabajo.
+
+    El espectro de magnitud de una señal con un número finito de armónicos, al modificar su periodo, 
+    el número de componentes suficiente para reconstruir la señal y la intensidad de cada componente 
+    se mantiene. Sin embargo, dada la proporción inversa que se tiene analíticamente entre el periodo
+    y la frecuencia, se aprecia que el aumento del periodo de la señal provoca que la frecuencia 
+    tienda a valores cercanos a cero.
+
+    El aumento del periodo de una señal con segmentos sin amplitud provoca un mayor número de componentes 
+    en frecuencia, que a su vez genera cambios en el espectro de magnitud con una reducción en la intensidad 
+    de la señal. Aunque la forma de la envolvente que describe el espectro de magnitud no
+    cambia, es posible apreciar esta con mas precisión. 
+
+
+\end{multicols}
+\end{document}
